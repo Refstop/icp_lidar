@@ -22,7 +22,7 @@ build 폴더를 생성하여 make 한 후 실행 파일을 실행합니다. 실�
 파란색 *: input points  
 빨간색 *: icp 알고리즘에 의해 정렬된 points  
 - reference_points.txt와 points_to_be_aligned.txt의 정렬 결과
-<p align="center"><img src="/figs/result_1.png">scan1 data</p>
+<p align="center"><img src="/figs/result_1.png"></p>
 
 - true_data.txt와 moved_data.txt의 정렬 결과
-<p align="center"><img src="/figs/result_2.png">scan1 data</p>
+<p align="center"><img src="/figs/result_2.png"></p>
