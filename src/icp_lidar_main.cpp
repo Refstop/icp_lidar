@@ -12,7 +12,7 @@ std::vector<double> eigenVec2stdVec(const VectorXd& evec) {
 }
 
 int main(int argc, char* argv[]) {
-    icp_lidar icp;
+    icp_lidar icp(argv[1], argv[2]);
     MatrixXd result_points = icp.icp(icp.reference_points, icp.points_to_be_aligned, 100, 10);
     // cout << "icp.reference_points:" << endl << icp.reference_points << endl << endl;
     // cout << "icp.points_to_be_aligned:" << endl << icp.points_to_be_aligned << endl << endl;

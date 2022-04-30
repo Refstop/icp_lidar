@@ -8,6 +8,7 @@
 #include <ceres/ceres.h>
 #include <vector>
 #include <fstream>
+#include <string>
 #include <sstream>
 #include <cmath>
 #define RAD2DEG(rad) rad*(180/M_PI)
@@ -21,7 +22,7 @@ typedef knncpp::Matrixi Matrixi;
 class icp_lidar {
     public:
     MatrixXd reference_points, points_to_be_aligned;
-    icp_lidar();
+    icp_lidar(string ref_file, string tobealigned_file);
     ~icp_lidar() {}
     void knn_kdtree(const MatrixXd& reference_points, const MatrixXd& points_to_be_aligned);
     double* point_based_matching(const MatrixXd& points_pair_a, const MatrixXd& points_pair_b);

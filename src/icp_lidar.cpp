@@ -1,11 +1,10 @@
 #include "icp_lidar/icp_lidar.h"
 
-icp_lidar::icp_lidar() {
+icp_lidar::icp_lidar(string ref_file, string tobealigned_file) {
     this->reference_points.resize(1,2);
     this->points_to_be_aligned.resize(1,2);
 
-    // ifstream reference_points("../example/reference_points.txt");
-    ifstream reference_points("../example/true_data.txt");
+    ifstream reference_points(ref_file);
 	if(!reference_points.is_open()) {
         cout << "Error opening file" << endl;
         exit(1);
@@ -16,8 +15,7 @@ icp_lidar::icp_lidar() {
         push_back_(this->reference_points, Split_(line, ' '), i);
     }
 
-    // ifstream points_to_be_aligned("../example/points_to_be_aligned.txt");
-    ifstream points_to_be_aligned("../example/moved_data.txt");
+    ifstream points_to_be_aligned(tobealigned_file);
 	if(!points_to_be_aligned.is_open()) {
         cout << "Error opening file" << endl;
         exit(1);
